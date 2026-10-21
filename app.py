@@ -100,7 +100,7 @@ body, .stApp {
 }
 
 .block-container {
-    padding-top: 1.25rem;
+    padding-top: 4.5rem;
     padding-bottom: 2.5rem;
     max-width: 1280px;
 }
