@@ -249,25 +249,7 @@ The application generates an executive-ready, 12-sheet Excel report (`CompanyX_S
 
 ---
 
-## 14. AI Features (Optional & Grounded)
-When enabled via an optional Gemini API key (or operating via local deterministic fallback), the tool offers two strictly constrained AI capabilities:
-
-### 1. AI Management Assistant (Tab 8)
-- **Role**: Executive decision interpreter.
-- **Strict Invariant**: The AI **never** calculates financial metrics, classifies SKUs, or determines R1–R7 rules. It only interprets already-calculated deterministic outputs.
-- **Fact-Grounded**: Answers queries like *"Which five items should we prioritize?"* or *"Why is SKU1006 important?"* using strictly verified data. If data is unavailable, it outputs: *"Insufficient data available."* Never hallucinates numbers.
-
-### 2. AI Sales Message Generator (Tab 3)
-- **Role**: Drafts outbound communication based strictly on 8 verified fields (`SKU`, `Customer`, `Industry`, `Purchase History`, `Bucket`, `Aged Value`, `Recommended Action`, `Evidence`).
-- **Formats Generated**:
-  1. Short WhatsApp-style message
-  2. Formal commercial email
-  3. Outbound sales call talking points
-- **Anti-Hallucination Guardrails**: Programmatically prohibited from inventing prices, discounts, quantities, delivery dates, or unverified specifications. Labeled clearly as **AI-generated draft**.
-
----
-
-## 15. Installation
+## 14. Installation
 
 ### System Prerequisites
 - **Operating System**: Windows, macOS, or Linux.
@@ -301,20 +283,7 @@ When enabled via an optional Gemini API key (or operating via local deterministi
 
 ---
 
-## 16. How to Run & Deploy
-
-### Local Execution
-Start the Streamlit application from the project root:
-```bash
-streamlit run app.py
-```
-- **Local URL**: `http://localhost:8501`
-- **Network URL**: `http://<your-local-ip>:8501`
-
-### Running Headless (Production / Server Mode)
-```bash
-streamlit run app.py --server.port 8501 --server.headless true
-```
+## 15. How to Run & Deploy
 
 ### Cloud Deployment (Streamlit Community Cloud)
 The application is pre-configured and cloud-ready for instant 1-click deployment on Streamlit Community Cloud:
@@ -337,7 +306,7 @@ The application is pre-configured and cloud-ready for instant 1-click deployment
 
 ---
 
-## 17. Testing
+## 16. Testing
 The application includes an exhaustive automated test suite with **307 tests** across 31 test modules, achieving **100% pass rate**:
 
 ```bash
@@ -373,7 +342,7 @@ tests/test_rules_r1_to_r7.py ....................                        [ 26%]
 
 ---
 
-## 18. Known Limitations
+## 17. Known Limitations
 1. **Batch Review Model**: Optimized for periodic (monthly/quarterly) inventory optimization reviews rather than sub-second real-time streaming transactions.
 2. **In-Memory Dataset Scaling**: Built on Pandas in-memory DataFrames, ideal for distributor catalogs up to ~250,000 transaction rows. Ultra-large enterprise deployments (> 5M rows) should connect to an external columnar engine (e.g., DuckDB or PostgreSQL).
 3. **Single Currency**: Default currency formatting is Indian Rupees (`₹`); multi-currency conversion is not enabled in this release.
@@ -381,7 +350,7 @@ tests/test_rules_r1_to_r7.py ....................                        [ 26%]
 
 ---
 
-## 19. Future Enhancements
+## 18. Future Enhancements
 1. **ERP Direct Connectors**: Native API integrations for SAP S/4HANA, Microsoft Dynamics 365, Oracle NetSuite, and Tally Prime.
 2. **CRM Campaign Sync**: Automated creation of outbound sales tasks and call queues directly in Salesforce, HubSpot, or Zoho CRM.
 3. **Dynamic Markdown & Discount Optimization**: Algorithmic recommendation of maximum allowable sales discounts based on daily inventory holding costs and capital depreciation.
